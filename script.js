@@ -1,3 +1,5 @@
+const { use } = require("react");
+
 document.addEventListener('DOMContentLoaded', () => {
     let board = null;
     let game = new Chess();
@@ -82,5 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Invalid FEN string. Please try again.');
             }
         }
+    });
+
+    document.querySelector('.flip-board').addEventListener('click', () => {
+        board.flip();
+        makeRandomMove();
+        useColor = useColor === 'w' ? 'b' : 'w';
     });
 });
