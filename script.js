@@ -1,5 +1,3 @@
-const { use } = require("react");
-
 document.addEventListener('DOMContentLoaded', () => {
     let board = null;
     let game = new Chess();
@@ -69,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         board.start();
         moveHistory.textContent = '';
         moveCount = 1;
-        userColor = 'w';
+        useColor = 'w';
     });
 
     document.querySelector('.set-pos').addEventListener('click', () => {
