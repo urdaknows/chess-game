@@ -69,4 +69,18 @@ document.addEventListener('DOMContentLoaded', () => {
         moveCount = 1;
         userColor = 'w';
     });
+
+    document.querySelector('.set-pos').addEventListener('click', () => {
+        const fenInput = prompt('Enter FEN string:');
+        if(fenInput !== null) {
+            if(game.load(fenInput)) {
+                board.position(fenInput);
+                moveHistory.textContent = '';
+                moveCount = 1;
+                useColor = 'w';
+            }else {
+                alert('Invalid FEN string. Please try again.');
+            }
+        }
+    });
 });
